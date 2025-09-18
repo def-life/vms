@@ -22,7 +22,7 @@ export default function useTimeline(cameraId: string): { timeline: Timeline[], i
             //     throw new Error(res.data.errors)
             // }
 
-            setTimeline(res.data);
+            setTimeline(res.data as any);
         } catch (err) {
             console.log(err)
         } finally {

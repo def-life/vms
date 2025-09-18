@@ -1,4 +1,4 @@
-import { use, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createVideoConnection } from "./utils/video";
 import { VideoConnection } from "./types";
 

@@ -54,8 +54,22 @@ export class FFMpegProcessRecordingProcess extends FFMpegProcess {
             "-i", this.input,
 
             "-c", "copy",
+            // these 4 option refer to my NOTE of readme.md
+            // "-c:v", "libx264",
+            // "-profile:v", "baseline",
+
+            // "-level", "3.0",
+
+            // "-preset", "veryfast",
 
             "-tune", "zerolatency",
+
+            // refer to my NOTE of readme.md
+            // "-c:a", "aac",
+
+            // "-ar", "44100",
+
+            // "-b:a", "128k",
 
             "-flvflags", "no_duration_filesize",
 

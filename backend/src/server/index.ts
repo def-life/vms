@@ -20,7 +20,7 @@ export function startServer() {
 
     app.use("/", rootRouter)
 
-    app.listen(vars.PORT, () => {
+    app.listen(vars.PORT as number, "0.0.0.0", () => {
         logger.info("Server Started", {
             port: vars.PORT
         })

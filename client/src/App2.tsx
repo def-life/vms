@@ -1,6 +1,6 @@
-import { format, milliseconds, millisecondsToSeconds, minutesToMilliseconds, set } from "date-fns"
+import { format, minutesToMilliseconds } from "date-fns"
 import "./App.css"
-import { use, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 const timespan = minutesToMilliseconds(15);
 console.log(timespan); // 900000
@@ -59,7 +59,6 @@ export default function App2() {
 
     const seekPosRef = useRef<number>(Date.now() - 30 * 1000);
     const seekpos = seekPosRef.current
-    const [manualPosition, setManualPosition] = useState<boolean>(false)
 
     const [[timelineStart, timelineEnd], setTimelineRegion] = useState<[number, number]>([Date.now() - timespan, Date.now()]);
 
@@ -96,7 +95,7 @@ export default function App2() {
     }
 
 
-    function handleUp(e: MouseEvent) {
+    function handleUp() {
 
         if (!containerRef.current) return;
 
@@ -233,7 +232,7 @@ export default function App2() {
 
 
     const times = useMemo(() => {
-        const times: [[number, string]] = [];
+        const times: [[number, string]] = [] as any;
         const rounding = 60 * 1000;
         for (let i = 0; i < 15; i++) {
             const n = Math.round(mapNumber(i, 0, 15, timelineStart, timelineEnd) / rounding) * rounding;

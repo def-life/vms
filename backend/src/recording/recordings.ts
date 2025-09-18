@@ -12,7 +12,7 @@ import { repackRecording } from "./repack";
 import { createRecording, updateRecording } from "../services/recording";
 
 
-const TEN_MINUTES = 10 * 60 * 1000;
+const TEN_MINUTES = 15 * 60 * 1000;
 
 export async function populateRecordings() {
     let cameras = (await Camera.find({})).map((camera) => camera.toDto())

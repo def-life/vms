@@ -13,6 +13,8 @@ const MANUAL_TIMEOUT = 5000;
 // inputs will be these
 
 
+
+
 // via api call
 // const timeline = [
 //     {
@@ -69,7 +71,7 @@ export default function TimelineComponent(props: TimelineProps) {
 
     useTimedRender(1000);
 
-    function handleMouseDown(e: React.MouseEvent) {
+    function handleMouseDown() {
         if (!containerRef.current) return;
         setClicked(true)
     }

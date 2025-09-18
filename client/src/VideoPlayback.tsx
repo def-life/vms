@@ -22,7 +22,7 @@ export default function VideoPlayback(props: VideoPlaybackProps) {
     const needSeekRef = useRef<number | boolean>(false)
     const itemIndexRef = useRef(0);
     const intervalRef = useRef<number | null>(null);
-    const [liveConnection, setLiveConnection] = useState<{ video: HTMLVideoElement, destroy: () => void, player: mpegts.Player | undefined } | null>();
+    const [_, setLiveConnection] = useState<{ video: HTMLVideoElement, destroy: () => void, player: mpegts.Player | undefined } | null>();
     const [showLoader, setShowLoader] = useState(false);
 
     console.log("wrapper", wrapperRef2)

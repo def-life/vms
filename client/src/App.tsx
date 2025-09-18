@@ -8,7 +8,6 @@ export default function App() {
   const seekPosRef = useRef<number>(0);
   const needSeekAfterLoad = useRef<boolean | number>(false);
   const playerRef = useRef<mpegts.Player | null>(null);
-  const canUpdateTime = useRef<boolean>(true);
 
   function seek(pos: number) {
     if (!videoRef.current) return;
